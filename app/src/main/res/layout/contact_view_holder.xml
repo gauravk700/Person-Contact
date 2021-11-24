@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="contact"
+            type="com.hashedIn.database.ContactHasher" />
+        <variable
+            name="clickListener"
+            type="com.hashedIn.adapter.ContactAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
+        android:onClick="@{() -> clickListener.onClickedView(contact)}">
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription=""
+            contactImage="@{contact.profile}"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintDimensionRatio="2:4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:contactName="@{contact}"
+            style="@style/textViewStyle"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_contact_number"
+            app:layout_constraintTop_toTopOf="@id/iv_profile" />
+
+        <TextView
+            android:id="@+id/tv_contact_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:contactNumber="@{contact}"
+            android:layout_marginStart="@dimen/margin"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact_name"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact_number"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
