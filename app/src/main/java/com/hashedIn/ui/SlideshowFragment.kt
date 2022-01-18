@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hashedIn.databinding.FragmentSlideshowBinding
+import com.hashedIn.viewModel.SlideshowViewModel
 
 
 class SlideshowFragment : Fragment() {

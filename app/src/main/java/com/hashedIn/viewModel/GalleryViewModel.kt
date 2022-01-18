@@ -1,4 +1,4 @@
-package com.hashedIn.ui
+package com.hashedIn.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

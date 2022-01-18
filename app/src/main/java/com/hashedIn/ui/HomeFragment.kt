@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.hashedIn.databinding.FragmentHomeBinding
+import com.hashedIn.viewModel.HomeViewModel
 
 
 class HomeFragment : Fragment() {
